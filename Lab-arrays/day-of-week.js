@@ -1,20 +1,17 @@
 "use strict";
 
-function dayOfWeek(number) {
-  if (number === 1) {
-    console.log("Monday");
-  } else if (number === 2) {
-    console.log("Tuesday");
-  } else if (number === 3) {
-    console.log("Wednesday");
-  } else if (number === 4) {
-    console.log("Thursday");
-  } else if (number === 5) {
-    console.log("Friday");
-  } else if (number === 6) {
-    console.log("Saturday");
-  } else if (number === 7) {
-    console.log("Sunday");
+function dayOfWeek(day) {
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  if (day >= 1 && day <= 7) {
+    console.log(days[day - 1]);
   } else {
     console.log("Invalid day!");
   }
