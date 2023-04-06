@@ -48,3 +48,23 @@ function rotateArray(array) {
 
 rotateArray(["1", "2", "3", "4", "2"]);
 rotateArray(["Banana", "Orange", "Coconut", "Apple", "15"]);
+
+function nonDecreasingSubset(array) {
+  let max = Number.MIN_SAFE_INTEGER;
+  let arr = array.filter(checkHighest);
+
+  function checkHighest(currentNum) {
+    if (currentNum >= max) {
+      max = currentNum;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  console.log(arr.join(" "));
+}
+
+nonDecreasingSubset([1, 3, 8, 4, 10, 12, 3, 2, 24]);
+nonDecreasingSubset([1, 2, 3, 4]);
+nonDecreasingSubset([20, 3, 2, 15, 6, 1]);
