@@ -68,3 +68,66 @@ function nonDecreasingSubset(array) {
 nonDecreasingSubset([1, 3, 8, 4, 10, 12, 3, 2, 24]);
 nonDecreasingSubset([1, 2, 3, 4]);
 nonDecreasingSubset([20, 3, 2, 15, 6, 1]);
+
+function steamAccount(array) {
+  let peterAccountGames = [];
+  let shifted = array.shift();
+  peterAccountGames.push(shifted);
+  peterAccountGames = peterAccountGames[0].split(" ");
+  let index = 0;
+  let command = array[index++];
+
+  while (command !== "Play!") {
+    let firstElement = command.split(" ");
+    let commandGame = firstElement[0];
+    let game = firstElement[1];
+
+    switch (commandGame) {
+      case "Install":
+        if (peterAccountGames.includes(game)) {
+          break;
+        } else {
+          peterAccountGames.push(game);
+        }
+        break;
+
+      case "Uninstall":
+        let indexUninstall = peterAccountGames.indexOf(game);
+        if (peterAccountGames.includes(game)) {
+          peterAccountGames.splice(indexUninstall, 1);
+        }
+        break;
+
+      case "Update":
+        let indexUpdate = peterAccountGames.indexOf(game);
+        if (peterAccountGames.includes(game)) {
+          peterAccountGames.splice(indexUpdate, 1);
+          peterAccountGames.push(game);
+        }
+        break;
+      case "Expansion":
+        let expansionGame = game.split("-");
+        game = expansionGame[0];
+        let expansion = expansionGame[1];
+        let indexExpansion = peterAccountGames.indexOf(game);
+        if (peterAccountGames.includes(game)) {
+          peterAccountGames.splice(
+            indexExpansion + 1,
+            0,
+            `${game}:${expansion}`
+          );
+        }
+    }
+    command = array[index++];
+  }
+  console.log(peterAccountGames.join(" "));
+}
+
+steamAccount([
+  "CS WoW Diablo",
+  "Install LoL",
+  "Uninstall WoW",
+  "Update Diablo",
+  "Expansion CS-Go",
+  "Play!",
+]);
