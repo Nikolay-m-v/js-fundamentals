@@ -35,3 +35,16 @@ function addAndRemove(input) {
 addAndRemove(["add", "add", "add", "add"]);
 addAndRemove(["add", "add", "remove", "add", "add"]);
 addAndRemove(["remove", "remove", "remove"]);
+
+function rotateArray(array) {
+  let lastElement = Number(array.pop());
+
+  for (let i = 0; i < lastElement; i++) {
+    let popped = array.pop();
+    array.unshift(popped);
+  }
+  console.log(array.join(" "));
+}
+
+rotateArray(["1", "2", "3", "4", "2"]);
+rotateArray(["Banana", "Orange", "Coconut", "Apple", "15"]);
