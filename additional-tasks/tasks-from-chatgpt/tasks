@@ -1,0 +1,11 @@
+Create a two-dimensional array of objects with name and age properties, and write a function that returns the average age of all the objects.
+
+Create a two-dimensional array of numbers and write a function that returns a new array with the largest number from each subarray.
+
+Create a two-dimensional array of strings and write a function that returns a new array with all the strings sorted in alphabetical order.
+
+Create a two-dimensional array of booleans and write a function that returns a new array with all the values inverted (i.e. true becomes false and vice versa).
+
+Create a two-dimensional array of objects with name and score properties, and write a function that returns the highest scoring object.
+
+Create a two-dimensional array of numbers and write a function that returns the difference between the largest and smallest numbers in the array.
