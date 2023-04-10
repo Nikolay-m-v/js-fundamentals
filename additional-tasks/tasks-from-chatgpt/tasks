@@ -1,3 +1,11 @@
+Create a two-dimensional array of numbers and write a function that finds the highest number in the array.
+
+Create a two-dimensional array of strings and write a function that returns a new array with all the strings concatenated together.
+
+Create a two-dimensional array of numbers and write a function that returns the sum of all the numbers in the array.
+
+Create a two-dimensional array of booleans and write a function that returns the number of true values in the array.
+
 Create a two-dimensional array of objects with name and age properties, and write a function that returns the average age of all the objects.
 
 Create a two-dimensional array of numbers and write a function that returns a new array with the largest number from each subarray.
