@@ -25,3 +25,4 @@ function perfectOrNot(n) {
 perfectOrNot(6);
 perfectOrNot(28);
 perfectOrNot(1236498);
+perfectOrNot(11);
