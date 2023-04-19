@@ -22,3 +22,7 @@ let sliced = arrayToSlice.slice(1, 2);
 let searchIndex = ["William", "Kamen", "Georgi", "Vision"];
 let kamenIndex = searchIndex.indexOf("Kamen");
 console.log(kamenIndex);
+
+let lastIndex = ["William", "Kamen", "Georgi", "Vision", "Kamen"];
+let kamenLastIndex = lastIndex.lastIndexOf("Kamen");
+console.log(kamenLastIndex);
