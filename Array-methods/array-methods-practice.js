@@ -26,3 +26,14 @@ console.log(kamenIndex);
 let lastIndex = ["William", "Kamen", "Georgi", "Vision", "Kamen"];
 let kamenLastIndex = lastIndex.lastIndexOf("Kamen");
 console.log(kamenLastIndex);
+
+let count = 0;
+let arrayForEach = ["William", "Kamen", "Georgi", "Vision"];
+arrayForEach.forEach((n) => {
+  count++;
+});
+console.log(count);
+
+let numbers = [1, 2, 3, 4, 5, 6];
+let doubled = numbers.map((n) => n * 2);
+console.log(doubled);
