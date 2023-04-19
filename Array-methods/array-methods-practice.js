@@ -18,3 +18,7 @@ console.log(namesToSplice);
 
 let arrayToSlice = ["William", "Kamen", "Georgi", "Vision"];
 let sliced = arrayToSlice.slice(1, 2);
+
+let searchIndex = ["William", "Kamen", "Georgi", "Vision"];
+let kamenIndex = searchIndex.indexOf("Kamen");
+console.log(kamenIndex);
