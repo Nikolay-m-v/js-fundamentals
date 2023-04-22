@@ -8,6 +8,7 @@ const nums = [10, 30, 50, 70, 90]
     if (number > 1000) {
       return number;
     }
+    return false;
   })
   .reduce((result, number) => {
     return result + number;
