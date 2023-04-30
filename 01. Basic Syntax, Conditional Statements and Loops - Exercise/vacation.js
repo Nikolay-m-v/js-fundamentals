@@ -1,69 +1,50 @@
 "use strict";
 
-function vacation(input) {
-  let amountOfPeople = Number(input[0]);
-  let typeOfGroup = String(input[1]);
-  let dayOfWeek = String(input[2]);
-  let pricePerNight = 0;
-  let totalPrice = 0;
+// You are given a group of people, the type of the group, and the day of the week they are going to stay. Based on that information calculate how much they have to pay and print that price on the console. Use the table below. In each cell is the price for a single person.
+// The output should look like that: `Total price: {price}`.The price should be formatted to the second decimal point.
 
-  if (dayOfWeek === "Friday") {
+function vacation(amountOfClients, typeOfGroup, dayOfStay) {
+  let totalSum = 0;
+
+  if (dayOfStay === "Friday") {
     if (typeOfGroup === "Students") {
-      pricePerNight = 8.45;
-      if (amountOfPeople >= 30) {
-        pricePerNight -= pricePerNight * 0.15;
-      }
+      totalSum = amountOfClients * 8.45;
     } else if (typeOfGroup === "Business") {
-      pricePerNight = 10.9;
-      if (amountOfPeople >= 100) {
-        amountOfPeople -= 10;
-      }
+      totalSum = amountOfClients * 10.9;
     } else if (typeOfGroup === "Regular") {
-      pricePerNight = 15;
-      if (amountOfPeople >= 10 && amountOfPeople <= 20) {
-        pricePerNight -= pricePerNight * 0.05;
-      }
+      totalSum = amountOfClients * 15;
     }
-  } else if (dayOfWeek === "Saturday") {
+  } else if (dayOfStay === "Saturday") {
     if (typeOfGroup === "Students") {
-      pricePerNight = 9.8;
-      if (amountOfPeople >= 30) {
-        pricePerNight -= pricePerNight * 0.15;
-      }
+      totalSum = amountOfClients * 9.8;
     } else if (typeOfGroup === "Business") {
-      pricePerNight = 15.6;
-      if (amountOfPeople >= 100) {
-        amountOfPeople -= 10;
-      }
-      pricePerNight = 10.9;
+      totalSum = amountOfClients * 15.6;
     } else if (typeOfGroup === "Regular") {
-      pricePerNight = 20;
-      if (amountOfPeople >= 10 && amountOfPeople <= 20) {
-        pricePerNight -= pricePerNight * 0.05;
-      }
+      totalSum = amountOfClients * 20;
     }
-  } else if (dayOfWeek === "Sunday") {
+  } else if (dayOfStay === "Sunday") {
     if (typeOfGroup === "Students") {
-      pricePerNight = 10.46;
-      if (amountOfPeople >= 30) {
-        pricePerNight -= pricePerNight * 0.15;
-      }
+      totalSum = amountOfClients * 10.46;
     } else if (typeOfGroup === "Business") {
-      pricePerNight = 16;
-      if (amountOfPeople >= 100) {
-        amountOfPeople -= 10;
-      }
-      pricePerNight = 10.9;
+      totalSum = amountOfClients * 16;
     } else if (typeOfGroup === "Regular") {
-      pricePerNight = 22.5;
-      if (amountOfPeople >= 10 && amountOfPeople <= 20) {
-        pricePerNight -= pricePerNight * 0.05;
-      }
+      totalSum = amountOfClients * 22.5;
     }
   }
-  totalPrice = amountOfPeople * pricePerNight;
-  console.log("Total price: " + totalPrice.toFixed(2));
+
+  if (amountOfClients >= 30 && typeOfGroup === "Students") {
+    totalSum = totalSum - totalSum * 0.15;
+  } else if (amountOfClients >= 100 && typeOfGroup === "Business") {
+    totalSum = totalSum - (totalSum / amountOfClients) * 10;
+  } else if (
+    amountOfClients >= 10 &&
+    amountOfClients <= 20 &&
+    typeOfGroup === "Regular"
+  ) {
+    totalSum = totalSum * 0.95;
+  }
+
+  console.log("Total price: " + totalSum.toFixed(2));
 }
 
-vacation(["30", "Students", "Sunday"]);
-vacation(["40", "Regular", "Saturday"]);
+vacation(10, "Students", "Friday");

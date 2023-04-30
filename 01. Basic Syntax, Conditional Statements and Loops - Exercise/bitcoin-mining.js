@@ -1,43 +1,53 @@
-"use strict";
+// Write a JavaScript program that calculates the total amount of bitcoins you purchased with the gold you mined during your shift at the mine.
+// Your shift consists of a certain number of days where you mine an amount of gold in grams.
+// Your program will receive an array with the amount of gold you mined each day, where the first day of your shift is the first index of the array.
+// Also, someone was stealing every third day from the start of your shift 30% from the mined gold for this day.
+// You need to check, which day you have enough money to buy your first bitcoin. For the different exchanges use these prices:
+// 1 bitcoin = 11949.16lv
+// 1 g of gold = 67.51lv
 
-function bitcoinMining(input) {
-  let oneGramOfGold = 67.51;
-  let oneBitcoinPrice = 11949.16;
-  let totalMoneyMade = 0;
-  let moneyMade = 0;
-  let bitcoinsBought = 0;
-  let dayFirstPurchase = 0;
-  let leftMoney = 0;
-  let currentDay = 0;
-  let goldGramsForCurrentDay = 0;
-  let bitcoinCounter = 0;
+function bitcoinMining(params) {
+  let firstDay = Number(params[0]);
+  let secondDay = Number(params[1]);
+  let thirdDay = Number(params[2]);
+  let thirdDayAfterStolen = thirdDay - thirdDay * 0.3;
+  let priceForOneBitcoin = 11949.16;
+  let priceForOneGramOfGold = 67.51;
 
-  for (let i = 0; i < input.length; i++) {
-    currentDay++;
-    goldGramsForCurrentDay = input[i];
-    if (currentDay % 3 === 0) {
-      goldGramsForCurrentDay *= 0.7;
-    }
-    let moneyMadePerDay = goldGramsForCurrentDay * oneGramOfGold;
-    totalMoneyMade += moneyMadePerDay;
-    moneyMade += moneyMadePerDay;
+  let moneyMadeForDayOne = firstDay * priceForOneGramOfGold;
+  let moneyMadeForDayTwo = secondDay * priceForOneGramOfGold;
+  let totalMoneyMadeAfterDayTwo = moneyMadeForDayOne + moneyMadeForDayTwo;
+  let moneyMadeForDayThree = thirdDayAfterStolen * priceForOneGramOfGold;
+  let totalMoneyMadeAfterDayThree =
+    moneyMadeForDayThree + totalMoneyMadeAfterDayTwo;
 
-    if (moneyMade >= oneBitcoinPrice) {
-      bitcoinCounter++;
-      let bitcoinsPerDay = Math.floor(moneyMade / oneBitcoinPrice);
-      bitcoinsBought += bitcoinsPerDay;
-      moneyMade -= bitcoinsPerDay * oneBitcoinPrice;
-    }
-    if (bitcoinCounter === 1) {
-      dayFirstPurchase = currentDay;
-      console.log("day of the first purchased bitcoin : " + dayFirstPurchase);
-    }
-    leftMoney = totalMoneyMade - bitcoinsBought * oneBitcoinPrice;
+  let amountOfBitcoinsBought = totalMoneyMadeAfterDayThree / priceForOneBitcoin;
+  let amountOfBitcoinsBoughtFormatted = Math.floor(amountOfBitcoinsBought);
+  let moneyLeftAfterBuyingBitcoins =
+    totalMoneyMadeAfterDayThree % priceForOneBitcoin;
+  let moneyLeftAfterBuyingBitcoinsFormatted =
+    (moneyLeftAfterBuyingBitcoins * 100) / 100;
+
+  if (amountOfBitcoinsBought >= 1) {
+    console.log(
+      "You have bought " + amountOfBitcoinsBoughtFormatted + " bitcoins"
+    );
+    console.log(
+      "Money left: " + moneyLeftAfterBuyingBitcoinsFormatted + " lv."
+    );
+  } else {
+    console.log("Money left: " + totalMoneyMadeAfterDayTwo);
   }
-  console.log("bitcoins bought " + bitcoinsBought);
-  console.log("left money : " + leftMoney.toFixed(2));
+
+  if (moneyMadeForDayOne >= priceForOneBitcoin) {
+    console.log("you bought your first bitcoin after first day of work");
+  } else if (totalMoneyMadeAfterDayTwo >= priceForOneBitcoin) {
+    console.log("you bought your first bitcoin after second day of work");
+  } else if (totalMoneyMadeAfterDayThree >= priceForOneBitcoin) {
+    console.log("you bought your first bitcoin after third day of work");
+  } else {
+    console.log("You have not bought any bitcoins");
+  }
 }
 
-bitcoinMining(["100", "200", "300"]);
-bitcoinMining(["50", "100"]);
-bitcoinMining(["3124.15", "504.212", "2511.124"]);
+bitcoinMining([50, 100, 300]);

@@ -1,9 +1,9 @@
-"use strict";
+// You will receive a number as a parameter. Print the 10 times table for this number.
 
-function multiply(number) {
+function multiplicationTable(n) {
   for (let i = 1; i <= 10; i++) {
-    console.log(number + " x " + i + " = " + n * i);
+    console.log(n + " * " + i + " = " + n * i);
   }
 }
 
-multiply("5");
+multiplicationTable(5);
