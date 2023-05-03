@@ -6,8 +6,8 @@ function distinctArray(array) {
     for (let k = i + 1; k < array.length; k++) {
       let nextNumber = array[k];
       if (currentNumber === nextNumber) {
-        array.splice(k, i);
-        j -= 1;
+        array.splice(k, 1);
+        k -= 1;
       }
     }
   }
