@@ -7,18 +7,12 @@ function searchForANumber(array1, array2) {
   let occuranceCounter = 0;
   let newArray = [];
 
-  let indexOfSpecialNumber = array1.indexOf(specialNumber);
-  while (indexOfSpecialNumber !== -1) {
-    newArray = array1.splice(0, numbersToBeTaken);
-    indexOfSpecialNumber = array1.indexOf(specialNumber);
-  }
+  newArray = array1.splice(0, numbersToBeTaken);
   for (let i = 0; i < numbersToDelete; i++) {
-    let currentNumber = newArray[i];
     newArray.shift();
   }
   for (let i = 0; i < newArray.length; i++) {
-    let currentNumber = newArray[i];
-    if (currentNumber === specialNumber) {
+    if (newArray[i] === specialNumber) {
       occuranceCounter++;
     }
   }
