@@ -5,14 +5,13 @@ function buildAWall(array) {
   let maxHeightInFeet = 30;
   array = array.map(Number);
   let crews = array.length;
-  let totalConcrete = 0;
   let concretePerDay = [];
 
   while (crews > 0) {
     let sorted = array.sort((a, b) => a - b);
     let max = sorted[array.length - 1];
 
-    for (let i = max; i <= maxHeightInFeet; i++) {
+    for (let i = max + 1; i <= maxHeightInFeet; i++) {
       for (let j = 0; j < sorted.length; j++) {
         sorted[j]++;
       }
@@ -21,9 +20,20 @@ function buildAWall(array) {
 
     for (let k = 0; k < sorted.length; k++) {
       if (sorted[k] === 30) {
+        let indexOf30 = sorted.indexOf(30);
+        sorted.splice(indexOf30, 1);
+        crews--;
       }
     }
   }
+
+  let sum = 0;
+  for (let money of concretePerDay) {
+    sum += money;
+  }
+
+  console.log(concretePerDay.join(", "));
+  console.log(`${sum * 1900} pesos`);
 
   // let crew1 = Number(array[0]);
   // let crew2 = Number(array[1]);
