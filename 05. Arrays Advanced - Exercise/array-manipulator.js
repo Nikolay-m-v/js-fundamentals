@@ -23,7 +23,7 @@ function arrayManipulator(arrayNumbers, arrayStrings) {
       case "contains":
         element = Number(currentCommand[1]);
         let indexOfElement = arrayNumbers.indexOf(element);
-        console.log(indexOfCommand);
+        console.log(indexOfElement);
         break;
       case "remove":
         arrayNumbers.splice(indexOfCommand, 1);
@@ -35,8 +35,21 @@ function arrayManipulator(arrayNumbers, arrayStrings) {
         }
         break;
       case "sumPairs":
+        numbersArraySum = [];
+        while (arrayNumbers.length > 0) {
+          let sum = arrayNumbers[0] + arrayNumbers[1];
+          if (arrayNumbers.length === 1) {
+            sum = arrayNumbers[0];
+          }
+          arrayNumbers.push(sum);
+          arrayNumbers.splice(0, 2);
+        }
+        arrayNumbers = numbersArraySum;
+        break;
     }
+    command = arrayStrings[index++];
   }
+  console.log(`${arrayNumbers.join(", ")}`);
 }
 
 arrayManipulator(
