@@ -2,25 +2,46 @@
 
 function gladiatorInventory(array) {
   let index = 0;
-  let command = index++;
+  let command = array[index++];
   let inventory = [];
+  inventory = array[0].split(" ");
 
-  for (let i = 0; i < array.length; i++) {
-    let splitInventory = inventory.split(" ");
-    command = array[index++].split(" ");
-    let currentCommand = command[0];
-    let equipment = command[1];
+  for (let i = 1; i < array.length; i++) {
+    let splitCommand = array[i].split(" ");
+    let currentCommand = splitCommand[0];
+    let equipment = splitCommand[1];
 
     switch (currentCommand) {
       case "Buy":
         if (array.includes(equipment)) {
           continue;
         } else {
-          array.push(equipment);
+          inventory.push(equipment);
+        }
+        break;
+      case "Trash":
+        if (inventory.includes(equipment)) {
+          let indexOfElement = inventory.indexOf(equipment);
+          inventory.splice(indexOfElement, 1);
+        }
+        break;
+      case "Repair":
+        if (inventory.includes(equipment)) {
+          let indexOfElement = inventory.indexOf(equipment);
+          inventory.splice(indexOfElement, 1);
+          inventory.push(equipment);
+        }
+        break;
+      case "Upgrade":
+        let upgrade = equipment.split("-");
+        if (inventory.includes(upgrade[0])) {
+          let shifted = inventory.shift(equipment);
+          inventory.unshift(equipment);
+          inventory.unshift(shifted);
         }
     }
   }
-  console.log(array);
+  console.log(inventory);
 }
 
 gladiatorInventory([
@@ -29,4 +50,10 @@ gladiatorInventory([
   "Trash Shield",
   "Repair Spear",
   "Upgrade SWORD-Steel",
+]);
+gladiatorInventory([
+  "SWORD Shield Spear",
+  "Trash Bow",
+  "Repair Shield",
+  "Upgrade Helmet-V",
 ]);
