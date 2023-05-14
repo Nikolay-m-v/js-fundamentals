@@ -1,6 +1,10 @@
 "use strict";
 
-function airPollution(matrix, conditions) {}
+function airPollution(coordinates, conditions) {
+  let matrixMap = coordinates.map((number) => number.split(" ").map(Number));
+  console.log(matrixMap);
+  let pollutedAreas = [];
+}
 
 airPollution(
   [
