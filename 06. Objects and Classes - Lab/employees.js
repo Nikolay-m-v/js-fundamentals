@@ -8,9 +8,7 @@ function employees(array) {
     listOfNames[currentName] = currentName.length;
   }
   for (let name in listOfNames) {
-    console.log(
-      `Name: ${name} -- Personal Number: ${listOfNames[currentName]}`
-    );
+    console.log(`Name: ${name} -- Personal Number: ${listOfNames[name]}`);
   }
 
   // for (let i = 0; i < array.length; i++) {
