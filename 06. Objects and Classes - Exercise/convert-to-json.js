@@ -6,3 +6,4 @@ function convertToJSON(name, lastName, hairColor) {
 }
 
 convertToJSON("George", "Jones", "Brown");
+convertToJSON("Peter", "Smith", "Blond");
