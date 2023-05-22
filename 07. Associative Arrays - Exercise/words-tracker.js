@@ -8,8 +8,7 @@ function wordTracker(array) {
     let currentWord = array[i];
     if (currentWord === targetWords[0]) {
       targetWordsOneCounter++;
-    }
-    if (currentWord === targetWords[1]) {
+    } else if (currentWord === targetWords[1]) {
       targetWordsTwoCounter++;
     }
   }
@@ -39,4 +38,18 @@ wordTracker([
   "is",
   "your",
   "task",
+]);
+wordTracker([
+  "is the",
+  "first",
+  "sentence",
+  "Here",
+  "is",
+  "another",
+  "the",
+  "And",
+  "finally",
+  "the",
+  "the",
+  "sentence",
 ]);
