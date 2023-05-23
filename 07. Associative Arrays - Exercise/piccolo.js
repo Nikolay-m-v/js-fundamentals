@@ -25,3 +25,4 @@ piccolo([
   "IN, CA9876HH",
   "IN, CA2822UU",
 ]);
+piccolo(["IN, CA2844AA", "IN, CA1234TA", "OUT, CA2844AA", "OUT, CA1234TA"]);
