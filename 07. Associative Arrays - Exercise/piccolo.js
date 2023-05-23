@@ -4,20 +4,13 @@ function piccolo(array) {
   let record = {};
 
   for (let car of array) {
-    let commands = car.split(", ");
-    let action = commands[0];
-    let carPlate = commands[1];
-
-    switch (action) {
-      case "IN":
-        record[car].plate = carPlate;
-      case "OUT":
-        if (record.hasOwnProperty(carPlate)) {
-          delete record.carPlate;
-        }
-    }
+    let [command, carPlate] = car.split(", ");
+    command === "IN" ? (record[carPlate] = null) : delete record[carPlate];
   }
-  console.log(record);
+  let sorted = Object.keys(record).sort((a, b) => a.localeCompare(b));
+  sorted.length === 0
+    ? console.log("Parking lot is empty")
+    : sorted.map((car) => console.log(car));
 }
 
 piccolo([
