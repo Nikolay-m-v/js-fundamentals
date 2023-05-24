@@ -15,3 +15,4 @@ function minerTask(array) {
 }
 
 minerTask(["Gold", "155", "Silver", "10", "Copper", "17"]);
+minerTask(["gold", "155", "silver", "10", "copper", "17", "gold", "15"]);
