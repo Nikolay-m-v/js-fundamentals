@@ -6,3 +6,5 @@ function pascalSplitter(string) {
 }
 
 pascalSplitter("SplitMeIfYouCanHaHaYouCantOrYouCan");
+pascalSplitter("HoldTheDoor");
+pascalSplitter("ThisIsSoAnnoyingToDo");
