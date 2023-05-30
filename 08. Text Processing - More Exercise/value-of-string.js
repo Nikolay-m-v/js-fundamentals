@@ -8,11 +8,15 @@ function valueOfString(array) {
     let currLetter = word[i];
     if (type === "LOWERCASE") {
       if (currLetter.toLocaleLowerCase() === currLetter) {
-        sum += currLetter.charCodeAt();
+        if (currLetter.charCodeAt() >= 97 && currLetter.charCodeAt() <= 122) {
+          sum += currLetter.charCodeAt();
+        }
       }
     } else if (type === "UPPERCASE") {
       if (currLetter.toLocaleUpperCase() === currLetter) {
-        sum += currLetter.charCodeAt();
+        if (currLetter.charCodeAt() >= 65 && currLetter.charCodeAt() <= 90) {
+          sum += currLetter.charCodeAt();
+        }
       }
     }
   }
