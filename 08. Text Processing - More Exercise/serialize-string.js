@@ -20,3 +20,4 @@ function serializeString(array) {
 }
 
 serializeString(["abababa"]);
+serializeString(["avjavamsdmcalsdm"]);
