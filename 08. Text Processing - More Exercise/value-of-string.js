@@ -20,3 +20,4 @@ function valueOfString(array) {
 }
 
 valueOfString(["HelloFromMyAwesomePROGRAM", "LOWERCASE"]);
+valueOfString(["AC/DC", "UPPERCASE"]);
