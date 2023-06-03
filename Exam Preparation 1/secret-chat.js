@@ -32,6 +32,7 @@ function secretChat(input) {
       console.log(message);
     }
   }
+  console.log(`You have a new text message ${meessage}`);
 }
 
 secretChat([
