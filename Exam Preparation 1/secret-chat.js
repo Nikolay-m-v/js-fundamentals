@@ -23,7 +23,13 @@ function secretChat(input) {
         let secondHalf = message.substring(index + substring.length);
         message =
           firstHalf + secondHalf + substring.split("").reverse().join("");
+        console.log(message);
       }
+    } else if (command === "ChangeAll") {
+      let occurences = line[1];
+      let replacement = line[2];
+      message = message.split(occurences).join(replacement);
+      console.log(message);
     }
   }
 }
