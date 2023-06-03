@@ -14,7 +14,7 @@ function secretChat(input) {
       message = firstHalf + " " + secondHalf;
       console.log(message);
     } else if (command === "Reverse") {
-      let substring = line[1].reverse();
+      let substring = line[1];
       if (!message.includes(substring)) {
         console.log("error");
       } else {
