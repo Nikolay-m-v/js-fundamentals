@@ -6,10 +6,10 @@ function towns(input) {
   for (let element of input) {
     let tokens = element.split(" | ");
     townObject.town = tokens[0];
-    townObject.latitude = Number(tokens[1]).toFixed(2);
-    townObject.longitude = Number(tokens[2]).toFixed(2);
+    townObject.latitude = tokens[1];
+    townObject.longitude = tokens[2];
     console.log(
-      `town: ${townObject.town}, latitude: ${townObject.latitude}, longitude: ${townObject.longitude}`
+      `town: ${town}, latitude: ${latitude}, longitude: ${longitude}`
     );
   }
 }
