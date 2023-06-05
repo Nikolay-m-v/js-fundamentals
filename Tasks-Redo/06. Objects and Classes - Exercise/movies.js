@@ -1,7 +1,6 @@
 "use strict";
 
 function movies(input) {
-  let moviesObject = {};
   let listOfMovies = [];
 
   for (let lines of input) {
@@ -9,18 +8,18 @@ function movies(input) {
       let movieName = lines.split("addMovie ")[1];
       listOfMovies.push({ name: movieName });
     } else if (lines.includes("directedBy")) {
-      let [movieName, director] = lines.split(" directedBy ");
-      let movie = listOfMovies.find(
-        (element) => element.movieName === movieName
-      );
+      let movieInfo = lines.split(" directedBy ");
+      let name = movieInfo[0];
+      let director = movieInfo[1];
+      let movie = listOfMovies.find((element) => element.name === name);
       if (movie) {
         movie.director = director;
       }
     } else if (lines.includes("onDate")) {
-      let [movieName, date] = lines.split(" onDate ");
-      let movie = listOfMovies.find(
-        (element) => element.movieName === movieName
-      );
+      let movieInfo = lines.split(" onDate ");
+      let name = movieInfo[0];
+      let date = movieInfo[1];
+      let movie = listOfMovies.find((element) => element.name === name);
       if (movie) {
         movie.date = date;
       }
