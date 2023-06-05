@@ -1,6 +1,6 @@
 "use strict";
 
-function dicitonary(input) {
+function makeADicitonary(input) {
   let dictionary = {};
 
   for (let lines of input) {
