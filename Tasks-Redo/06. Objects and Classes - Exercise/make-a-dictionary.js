@@ -1,23 +1,23 @@
 "use strict";
 
-function makeADictionary(array) {
+function dicitonary(input) {
   let dictionary = {};
 
-  for (let line of array) {
-    let object = JSON.parse(line);
+  for (let lines of input) {
+    let object = JSON.parse(lines);
     dictionary = Object.assign(dictionary, object);
   }
 
-  let sortedKeys = Object.keys(dictionary);
+  let sortedKeys = Object.keys(dicitonary);
   sortedKeys.sort((a, b) => a.localeCompare(b));
 
   for (let term of sortedKeys) {
     let definition = dictionary[term];
-    console.log(`Term: ${term} => Definition ${definition}`);
+    console.log(`Term: ${term} => definition: ${definition}`);
   }
 }
 
-makeADickionary([
+dicitonary([
   '{"Coffee":"A hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub."}',
   '{"Bus":"A large motor vehicle carrying passengers by road, typically one serving the public on a fixed route and for a fare."}',
   '{"Boiler":"A fuel-burning apparatus or container for heating water."}',
