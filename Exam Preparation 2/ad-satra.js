@@ -21,6 +21,8 @@ function adSatra(input) {
   console.log(
     `You have food to last you for: ${Math.floor(totalCalories / 2000)} days!`
   );
+
+  console.log(output.join("\n"));
 }
 
 adSatra(
