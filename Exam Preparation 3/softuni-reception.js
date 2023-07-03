@@ -12,8 +12,12 @@ function reception(input) {
   while (studentsCount > 0) {
     studentsCount -= studentsPerHour;
     hoursNeeded++;
+    if (hoursNeeded % 4 === 0) {
+      hoursNeeded++;
+    }
   }
   console.log(`Hours needed: ${hoursNeeded}`);
 }
 
 reception(["5", "6", "4", "20"]);
+reception(["1", "2", "3", "45"]);
