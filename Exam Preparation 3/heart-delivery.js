@@ -43,9 +43,3 @@ heartDelivery([
   "Jump 2",
   "Love!",
 ]);
-
-
-
-const cat = {
-  name: 
-}
