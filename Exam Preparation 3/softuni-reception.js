@@ -21,4 +21,4 @@ function reception(input) {
 
 reception(["5", "6", "4", "20"]);
 reception(["1", "2", "3", "45"]);
-reception(["1", "2", "3", "45"]);
+reception(["1", "5", "7", "5"]);
