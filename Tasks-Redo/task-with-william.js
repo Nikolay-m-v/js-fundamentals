@@ -1,6 +1,6 @@
 "use strict";
 
-/** 
+/**
  * 1. Make a human object named Joe. Joe has first name, last name, age and can do the following things: giveCommand, giveTreats, giveCompliments.
  * 2. Make a dog object named Barry. Barry has a name, age and breed, gender, position in space ("sitting", "standing", "lying", "jumping", "rolling"), facial expression ("happy", "confused", normal"), makeSound ("woof", "bark", "chew") - Woof means "give me treats", bark means give me compliments.
  * 3. Joe can give Barry commands. Based on the command Barry will produce a specific sound.
@@ -11,7 +11,7 @@
  * Jump, which changes Barry's position to "jumping" and his expression to "happy".
  * Roll, which changes Barry's position to "rolling" and his expression to "happy".
  * If Barry is in a position but you give him a command to go into the same position, he will look confused.
-*/
+ */
 
 const joe = {
   firstName: "Joe",
@@ -68,7 +68,7 @@ const joe = {
       default:
         this.giveCompliments(dog);
     }
-  }
+  },
 };
 
 const barry = {
@@ -79,7 +79,7 @@ const barry = {
   positionInSpace: "standing",
   facialExpression: "normal",
   sound: "none",
-  
+
   makeSoundFor(desire) {
     switch (desire) {
       case "compliments":
@@ -135,9 +135,8 @@ const barry = {
     }
     this.positionInSpace = "rolling";
     this.facialExpression = "happy";
-  }
+  },
 };
-
 
 barry.makeSoundFor("treats");
 joe.understandSound(barry);
