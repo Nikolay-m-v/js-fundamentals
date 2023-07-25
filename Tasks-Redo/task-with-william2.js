@@ -83,6 +83,8 @@ const cat = {
 
 cat.makeSound("hungry");
 
+cat.makeSound("angry");
+
 console.log(cat);
 
 person.respondToSound(cat);
