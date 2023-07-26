@@ -17,7 +17,7 @@ let propName = "age";
 // console.log(Object.keys(cat));
 // console.log(Object.entries(cat));
 
-let arrayCat = Object.values(cat);
+// let arrayCat = Object.values(cat);
 // console.log(arrayCat);
 
 for (const key of Object.keys(cat)) {
