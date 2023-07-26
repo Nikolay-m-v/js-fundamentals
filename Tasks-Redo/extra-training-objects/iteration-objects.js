@@ -7,7 +7,7 @@ let cat = {
 };
 
 for (const prop in cat) {
-  console.log(prop);
+  console.log(cat[prop]);
 }
 
 let propName = "age";
