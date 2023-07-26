@@ -12,4 +12,8 @@ for (const prop in cat) {
 
 let propName = "age";
 
-console.log(cat[propName]);
+// console.log(cat[propName]);
+// console.log(Object.values(cat));
+
+let arrayCat = Object.values(cat);
+console.log(arrayCat);
