@@ -9,3 +9,7 @@ let cat = {
 for (const prop in cat) {
   console.log(prop);
 }
+
+let propName = "age";
+
+console.log(cat[propName]);
