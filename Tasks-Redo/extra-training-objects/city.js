@@ -9,3 +9,5 @@ function city(input) {
 }
 
 city({ name: "Sofia", Population: 23000, country: "Bulgaria", postCode: 1000 });
+city({ name: "Sofia", Population: 23000, country: "Bulgaria", postCode: 1000 });
+city({ name: "Sofia", Population: 23000, country: "Bulgaria", postCode: 1000 });
