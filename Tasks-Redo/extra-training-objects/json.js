@@ -19,5 +19,7 @@ let jsData = {
 };
 
 let jsoned = JSON.stringify(jsData);
+let objected = JSON.parse(jsoned);
 
 console.log(jsoned);
+console.log(objected.age);
