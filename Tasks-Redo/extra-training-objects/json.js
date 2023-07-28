@@ -17,3 +17,7 @@ let jsData = {
     Biology: [6.0],
   },
 };
+
+let jsoned = JSON.stringify(jsData);
+
+console.log(jsoned);
