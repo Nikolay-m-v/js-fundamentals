@@ -1,9 +1,10 @@
 "use strict";
 
-let bankInfo = {
+const bankInfo = {
   owner: "Ivan",
   amount: 1000,
   age: 33,
+  startingAge: 33,
   hasAcces: true,
   annualInterest: 0.006,
   yearsOfInterest: 0,
@@ -25,13 +26,23 @@ let bankInfo = {
   },
 
   interest() {
-    if (this.age > 33) {
+    if (this.age > this.startingAge) {
       this.yearsOfInterest = this.age - 33;
       for (let i = 1; i <= this.yearsOfInterest; i++) {
         this.amount += this.amount * this.annualInterest;
       }
     }
   },
+};
+
+const ivanInfo = {
+  name: "Ivan",
+  age: 33,
+  amount: 1000,
+  startingAge: 33,
+  hasAcces: true,
+  annualInterest: 0.006,
+  yearsOfInterest: 0,
 };
 
 bankInfo.becomeOlder();
