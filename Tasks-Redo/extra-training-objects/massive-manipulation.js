@@ -54,18 +54,18 @@ function arrayManipulation(array, input) {
   console.log(array);
 }
 
-// arrayManipulation(
-//   [10, 20, 30, 40, 50],
-//   [
-//     "Add 3",
-//     "Remove 20",
-//     "RemoveAt 1",
-//     "Insert 8 2",
-//     "Contains 20",
-//     "Contains 40",
-//     "STOP",
-//   ]
-// );
+arrayManipulation(
+  [10, 20, 30, 40, 50],
+  [
+    "Add 3",
+    "Remove 20",
+    "RemoveAt 1",
+    "Insert 8 2",
+    "Contains 20",
+    "Contains 40",
+    "STOP",
+  ]
+);
 arrayManipulation(
   [2, 4, 15, 31],
   [
