@@ -85,6 +85,8 @@ cat.makeSound("hungry");
 
 cat.makeSound("angry");
 
+cat.makeSound("thirsty");
+
 console.log(cat);
 
 person.respondToSound(cat);
