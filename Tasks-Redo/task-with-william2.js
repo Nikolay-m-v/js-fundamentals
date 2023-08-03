@@ -81,9 +81,9 @@ const cat = {
   },
 };
 
-cat.makeSound("hungry");
+// cat.makeSound("hungry");
 
-cat.makeSound("angry");
+// cat.makeSound("angry");
 
 cat.makeSound("thirsty");
 
