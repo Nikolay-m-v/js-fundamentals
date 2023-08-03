@@ -47,7 +47,7 @@ const cat = {
     if (state === "hungry") {
       this.currentSound = "meow";
       this.isHungry = true;
-    } else if (state === "thirsy") {
+    } else if (state === "thirsty") {
       this.currentSound = "meeew";
       this.isThirsty = true;
     } else {
