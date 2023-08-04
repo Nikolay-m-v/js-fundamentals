@@ -30,6 +30,7 @@ const joe = {
 
   giveTreats(dog) {
     this.giveCompliments(dog);
+    console.log("You are getting treats!");
   },
 
   understandSound(dog) {
