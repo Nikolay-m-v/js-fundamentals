@@ -30,7 +30,6 @@ const joe = {
 
   giveTreats(dog) {
     this.giveCompliments(dog);
-    console.log("You are getting treats!");
   },
 
   understandSound(dog) {
@@ -41,6 +40,8 @@ const joe = {
         break;
       case "bark":
         this.giveCompliments(dog);
+        console.log("You are getting treats!");
+
         dog.makeSoundFor("nothing");
         break;
       case "noone":
@@ -139,7 +140,7 @@ const barry = {
   },
 };
 
-barry.makeSoundFor("treats");
+// barry.makeSoundFor("treats");
 barry.makeSoundFor("compliments");
 joe.understandSound(barry);
 
