@@ -12,3 +12,4 @@ function convertor(firstName, lastName, color) {
 }
 
 convertor("Ivan", "Ivanov", "blue");
+convertor("Petar", "Petrov", "blue");
